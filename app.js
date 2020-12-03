@@ -32,6 +32,7 @@ displayImages = async () => {
                 let img = document.createElement('img');
                 img.setAttribute('src', doc.data().imageUrl);
                 img.setAttribute('id', 'this_image');
+                img.setAttribute('onclick', "window.open('"+doc.data().imageUrl+"')");
                 img.style.borderRadius = '15px';
                 img.style.marginLeft ='10px';
                 img.style.height = '300px';
@@ -61,6 +62,8 @@ showImage = async (value) => {
         let img = document.createElement('img');
         img.setAttribute('src', value.data().imageUrl);
         img.setAttribute('id', 'this_image');
+        console.log('window.open("'+value.data().imageUrl+'")');
+        img.setAttribute('onclick', "window.open('"+value.data().imageUrl+"')");
         img.style.borderRadius = '15px';
         img.style.marginLeft ='10px';
         img.style.height = '300px';
