@@ -48,7 +48,7 @@ oneSameWord = async (search_value, db_value, document) => {
     db_value_split = db_value.split(' ');
     for(x=0; x<search_value_split.length; x++){
         for(y=0; y<db_value_split.length; y++){
-            if((search_value_split[x] === db_value_split[x] || search_value_split[y] === db_value_split[y] || search_value_split[x] === db_value_split[y] || search_value_split[y] === db_value_split[x])){
+            if((search_value_split[x] === db_value_split[x] || search_value_split[y] === db_value_split[y] || search_value_split[x] === db_value_split[y] || search_value_split[y] === db_value_split[x]) && (db_value_split[x]!=='man' && db_value_split[y]!=='man')&& (search_value_split[x]!=='man' && search_value_split[y]!=='man')){
                 let value = await db.collection('images').doc(document.id).get()
                 image_present++
                 showImage(value);
